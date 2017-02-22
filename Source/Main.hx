@@ -28,7 +28,8 @@ class Main extends Sprite {
 		*/
 
 		this.appShell = new AppShell(this.stage.stageWidth,this.stage.stageHeight);
-		this.addChild(this.appShell.init());
+		//this.addChild(this.appShell.init());
+		this.appShell.init(this);
 	}
 	
 	

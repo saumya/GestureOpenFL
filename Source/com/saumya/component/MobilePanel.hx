@@ -16,6 +16,7 @@ class MobilePanel extends Sprite {
 
 	private var sWidth:Float;
 	private var sHeight:Float;
+	private var screenColor:UInt;
 
 	private var initX:Float;
 	private var finalX:Float;
@@ -24,10 +25,11 @@ class MobilePanel extends Sprite {
 	private var dragOffsetX:Float;
 	private var dragOffsetY:Float;
 
-	public function new(screenWidth:Float,screenHeight:Float) {
+	public function new(screenWidth:Float,screenHeight:Float,bgColor:UInt=0x440000) {
 		super();
 		this.sWidth = screenWidth;
 		this.sHeight = screenHeight;
+		this.screenColor = bgColor;
 		init();	
 	}
 
@@ -39,7 +41,7 @@ class MobilePanel extends Sprite {
 
 		var bg:Graphics = this.graphics;
 		bg.clear();
-		bg.beginFill(0x440000,1.0);
+		bg.beginFill(this.screenColor,1.0);
 		bg.drawRect(0,0,this.sWidth,this.sHeight);
 		bg.endFill();
 	}

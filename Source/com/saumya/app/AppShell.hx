@@ -18,9 +18,12 @@ class AppShell {
 		this.screenHeight = height;
 	}
 
-	public function init():DisplayObject{
+	public function init(view:Sprite):DisplayObject{
 		trace('TODO: Render the Application');
-		var s:MobilePanel = new MobilePanel(this.screenWidth,this.screenHeight);
-		return s;
+		var s1:MobilePanel = new MobilePanel(this.screenWidth,this.screenHeight,0xFF0000);
+		var s2:MobilePanel = new MobilePanel(this.screenWidth,this.screenHeight,0x00FF00);
+		view.addChild(s1);
+		view.addChild(s2);
+		return view;
 	}
 }
