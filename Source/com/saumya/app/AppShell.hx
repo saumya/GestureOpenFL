@@ -22,8 +22,10 @@ class AppShell {
 		trace('TODO: Render the Application');
 		var s1:MobilePanel = new MobilePanel(this.screenWidth,this.screenHeight,0xFF0000);
 		var s2:MobilePanel = new MobilePanel(this.screenWidth,this.screenHeight,0x00FF00);
+		var s3:MobilePanel = new MobilePanel(this.screenWidth,this.screenHeight,0x0000FF);
 		view.addChild(s1);
 		view.addChild(s2);
+		view.addChild(s3);
 		return view;
 	}
 }
