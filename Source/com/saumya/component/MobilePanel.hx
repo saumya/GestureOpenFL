@@ -94,4 +94,7 @@ class MobilePanel extends Sprite {
 			// Do Nothing
 		}
 	}
+	// API
+	
+
 }
