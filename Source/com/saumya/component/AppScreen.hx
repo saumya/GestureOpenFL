@@ -25,13 +25,7 @@ class AppScreen extends MobilePanel {
 
 	override public function render():Void{
 		super.render();
-		/*
-		var topBar:Graphics = this.graphics;
-		//topBar.clear();
-		topBar.beginFill(0x000000,1.0);
-		topBar.drawRect(0,0,this.appWidth,50);
-		topBar.endFill();
-		*/
+		
 		var navBarTop:NavBarTop = new NavBarTop(this.appWidth,this.appHeight,0x777777,60);
 		this.addChild(navBarTop);
 
