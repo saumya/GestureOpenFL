@@ -28,10 +28,11 @@ class AppScreen extends MobilePanel {
 	override public function render():Void{
 		trace('AppScreen : render : ');
 		super.render();
+
+		var acolor = Math.floor(Math.random()*(256*256*256));
 		
-		var navBarTop:NavBarTop = new NavBarTop(this.appWidth,this.appHeight,0x777777,60);
+		var navBarTop:NavBarTop = new NavBarTop(this.appWidth,this.appHeight,acolor,60);
 		this.addChild(navBarTop);
-		//super.addChild(navBarTop);
 
 	}
 

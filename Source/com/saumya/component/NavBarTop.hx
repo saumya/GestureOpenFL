@@ -34,7 +34,7 @@ class NavBarTop extends Sprite {
 		var topBar:Graphics = this.graphics;
 		// whole bar
 		topBar.clear();
-		topBar.beginFill(0x000000,1.0);
+		topBar.beginFill(this.barColor,1.0);
 		topBar.drawRect(0,0,this.sWidth,this.barHeight);
 		topBar.endFill();
 		// LeftBarItem / RightBarItem
