@@ -32,9 +32,28 @@ class NavBarTop extends Sprite {
 	private function drawGraphics():Void{
 		trace('NavBarTop : drawGraphics : ');
 		var topBar:Graphics = this.graphics;
+		// whole bar
 		topBar.clear();
 		topBar.beginFill(0x000000,1.0);
 		topBar.drawRect(0,0,this.sWidth,this.barHeight);
+		topBar.endFill();
+		// LeftBarItem / RightBarItem
+		addLeftButton();
+		addRightButton();
+	}
+	// API
+	public function addLeftButton():Void{
+		var topBar:Graphics = this.graphics;
+		//topBar.clear();
+		topBar.beginFill(0x999999,1.0);
+		topBar.drawRect(0,0,80,this.barHeight);
+		topBar.endFill();
+	}
+	public function addRightButton():Void{
+		var topBar:Graphics = this.graphics;
+		//topBar.clear();
+		topBar.beginFill(0x999999,1.0);
+		topBar.drawRect((this.sWidth-80),0,80,this.barHeight);
 		topBar.endFill();
 	}
 }
