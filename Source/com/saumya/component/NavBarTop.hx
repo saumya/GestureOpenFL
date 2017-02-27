@@ -38,8 +38,8 @@ class NavBarTop extends Sprite {
 		topBar.drawRect(0,0,this.sWidth,this.barHeight);
 		topBar.endFill();
 		// LeftBarItem / RightBarItem
-		addLeftButton();
-		addRightButton();
+		//addLeftButton();
+		//addRightButton();
 	}
 	// API
 	public function addLeftButton():Void{

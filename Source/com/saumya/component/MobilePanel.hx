@@ -25,6 +25,8 @@ class MobilePanel extends Sprite {
 	private var dragOffsetX:Float;
 	private var dragOffsetY:Float;
 
+	public static var IS_ACTIVE:String = 'isActiveEvent';
+
 	public function new(screenWidth:Float,screenHeight:Float,bgColor:UInt=0x440000) {
 		trace('MobilePanel : Constructor : ');
 		super();
@@ -82,14 +84,18 @@ class MobilePanel extends Sprite {
 			// move right
 			if(this.finalX-this.initX > 100){
 				Actuate.tween (this, 1, { x: this.sWidth, y:0 }).delay(0);
+				this.dispatchEvent(new Event(MobilePanel.IS_ACTIVE,true,true));
 			}else{
+				// rewind to original position
 				Actuate.tween (this, 1, { x: 0, y:0 }).delay(0);
 			}
 		}else if(this.finalX < this.initX){
 			// move left
 			if(this.initX-this.finalX > 100){
 				Actuate.tween (this, 1, { x: this.sWidth*(-1), y:0 }).delay(0);
+				this.dispatchEvent(new Event(MobilePanel.IS_ACTIVE,true,true));
 			}else{
+				// rewind to original position
 				Actuate.tween (this, 1, { x: 0, y:0 }).delay(0);
 			}
 			//Actuate.tween (this, 1, { x: this.sWidth*(-1) }).delay(0);
@@ -98,6 +104,8 @@ class MobilePanel extends Sprite {
 		}
 	}
 	// API
-	
+	public function bringToVisibleStage():Void{
+		Actuate.tween (this, 1, { x: 0, y:0 }).delay(0);
+	}
 
 }
