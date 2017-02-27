@@ -26,6 +26,7 @@ class MobilePanel extends Sprite {
 	private var dragOffsetY:Float;
 
 	public function new(screenWidth:Float,screenHeight:Float,bgColor:UInt=0x440000) {
+		trace('MobilePanel : Constructor : ');
 		super();
 		this.sWidth = screenWidth;
 		this.sHeight = screenHeight;
@@ -34,27 +35,29 @@ class MobilePanel extends Sprite {
 	}
 
 	public function init():Void{
+		trace('MobilePanel : init : ');
 		this.addEventListener(Event.ADDED_TO_STAGE,onAddedToStage);
 	}
 
 	public function render():Void{
-
+		trace('MobilePanel : render : ');
+		
 		var bg:Graphics = this.graphics;
 		bg.clear();
 		bg.beginFill(this.screenColor,1.0);
 		bg.drawRect(0,0,this.sWidth,this.sHeight);
 		bg.endFill();
+		
 	}
 
 	private function onAddedToStage(e:Event):Void{
-		trace('onAddedToStage');
+		trace('MobilePanel : onAddedToStage : ');
 		this.removeEventListener(Event.ADDED_TO_STAGE,onAddedToStage);
 		this.addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
 		render();
 	}
 
 	private function onMouseDown(e:MouseEvent):Void{
-		trace('onMouseDown');
 		this.stage.addEventListener(MouseEvent.MOUSE_UP,stage_onMouseUp);
 		this.stage.addEventListener(MouseEvent.MOUSE_MOVE,stage_onMouseMove);
 		//
